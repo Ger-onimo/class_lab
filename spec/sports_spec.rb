@@ -15,4 +15,22 @@ class TestTeam < MiniTest::Test
     assert_equal(['Betty','Gemma','Helen','Roger'],team.new_player('Roger'))
   end
 
+  def test_find_player__isthere
+    players = ['Betty','Gemma','Helen']
+    team = Team.new('Allstars',players,'Bob')
+    assert_equal(true,team.find_player('Gemma'))
+  end
+
+  def test_find_player__isnotthere
+    players = ['Betty','Gemma','Helen']
+    team = Team.new('Allstars',players,'Bob')
+    assert_equal(false,team.find_player('Cornelius'))
+  end
+
+  def test_points
+    players = ['Betty','Gemma','Helen']
+    team = Team.new('Allstars',players,'Bob')
+    assert_equal(0,team.points)
+  end
+
 end
