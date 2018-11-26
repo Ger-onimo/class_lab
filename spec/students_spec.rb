@@ -24,4 +24,15 @@ class TestStudents < MiniTest::Test
     student.cohort='E29'
     assert_equal('E29', student.cohort)
   end
+
+  def test_student_talks
+    student = Students.new('Jimmy','E28')
+    assert_equal('I can talk!', student.talk() )
+  end
+
+  def test_favourite_lang
+    student = Students.new('Jimmy','E28')
+    assert_equal('I love Ruby!',student.favourite_lang('Ruby'))
+  end
+
 end
