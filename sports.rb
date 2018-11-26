@@ -18,4 +18,9 @@ attr_accessor :coach
     return @players.include?(name)
   end
 
+  def outcome(outcome)
+    if outcome == 'win'
+      @points += 1
+    end
+  end
 end
