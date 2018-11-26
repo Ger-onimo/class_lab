@@ -33,17 +33,17 @@ class TestTeam < MiniTest::Test
     assert_equal(0,team.points)
   end
 
-  def test_outcome__win
+  def test_victory__true
     players = ['Betty','Gemma','Helen']
     team = Team.new('Allstars',players,'Bob')
-    team.outcome('win')
+    team.victory(true)
     assert_equal(1,team.points)
   end
 
-  def test_outcome__lose
+  def test_victory__false
     players = ['Betty','Gemma','Helen']
     team = Team.new('Allstars',players,'Bob')
-    team.outcome('lose')
+    team.victory(false)
     assert_equal(0,team.points)
   end
 end
