@@ -3,7 +3,7 @@ class Team
 attr_reader :name, :players, :points
 attr_accessor :coach
 
-  def initialize(name,players,coach)
+  def initialize(name, players, coach)
     @name = name
     @players = players
     @coach = coach
@@ -19,6 +19,6 @@ attr_accessor :coach
   end
 
   def victory(outcome)
-    @points += 1 if outcome 
+    @points += 1 if outcome
   end
 end

@@ -1,8 +1,8 @@
 class Students
 
-attr_accessor :name,:cohort
+attr_accessor :name, :cohort
 
-  def initialize(name,cohort)
+  def initialize(name, cohort)
     @name = name
     @cohort = cohort
   end
