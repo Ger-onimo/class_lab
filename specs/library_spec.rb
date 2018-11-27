@@ -35,16 +35,31 @@ def setup #data for minitest
     books = LibraryBooks.new(@books)
   end
 
+#complete Create a getter for the books
   def test_get_book
     lib_book = LibraryBooks.new(@books)
+    # expected book title is LOTR, Book titles are in book array index 1, title hash
     assert_equal("lord_of_the_rings",lib_book.books[0][:title])
   end
 
-#complete Create a getter for the books
 
-#Create a method that takes in a book title and
-#returns all of the information about that book.
+# #Create a method that takes in a book title and
+# #returns all of the information about that book.
 #   def test_book_info
-#     library = Library.new(@books)
-#     result =
+#     lib_book = LibraryBooks.new(@books)
+#     expected = ["lord_of_the_rings", "Jeff", "01/12/16"]
+# #want the info of the lib_book title at index 1
+#    assert_equal(expected, lib_book.books[0][:title][:student_name][:due_date])
+# end
+
+#Create a method that takes in a book title and returns only
+#the rental details for that book.
+
+#complete
+def test_rent_details
+  lib_book = LibraryBooks.new(@books)
+  result = lib_book.rent_details(@books[0])
+
+  assert_equal({student_name: "Jeff", due_date: "01/12/16"}, result)
+end
 end
